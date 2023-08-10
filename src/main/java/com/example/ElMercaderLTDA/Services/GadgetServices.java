@@ -33,6 +33,14 @@ public class GadgetServices {
         }
     }
 
+    public List<Gadget> findAllByPrice(Integer price) {
+        return gadgetRepository.findAllByPrice(price);
+    }
+
+    public List<Gadget> findAllByDescritpion(String description) {
+        return gadgetRepository.findAllByDescriptionContaining(description);
+    }
+
     public Gadget update(Gadget gadget) {
         // El gadget que vaya a ser actualizado debe existir
         if (gadget.getId() != null) {

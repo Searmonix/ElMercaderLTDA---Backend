@@ -35,6 +35,10 @@ public class UserServices {
         }
     }
 
+    public List<User> getAllByBirthtDay(String month) {
+        return userRepository.findAllByMonthBirthtDay(month);
+    }
+
     public User update(User user) {
         // El usuario que vaya a ser actualizado debe existir
         if (user.getId() != null) {

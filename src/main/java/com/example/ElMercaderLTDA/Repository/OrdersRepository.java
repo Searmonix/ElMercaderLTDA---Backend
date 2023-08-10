@@ -16,4 +16,5 @@ public interface OrdersRepository extends MongoRepository<Orders, Integer> {
     public List<Orders> findAllByStatusAndSalesMan_id(String state, int id);
 
     public List<Orders> findAllByRegisterDayAndSalesMan_id(Date date, int id);
+
 }

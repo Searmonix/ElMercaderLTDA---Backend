@@ -1,5 +1,7 @@
 const loggedUser = JSON.parse(sessionStorage.getItem('loggedUser'));
 
+console.log(loggedUser);
+
 if (loggedUser.type === "ASE") {
     location.href="../html/asesorHome.html";
 } else if (loggedUser.type === "COORD") {

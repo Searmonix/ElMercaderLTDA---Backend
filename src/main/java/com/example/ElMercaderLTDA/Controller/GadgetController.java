@@ -40,6 +40,15 @@ public class GadgetController {
         return gadgetServices.getGadget(id);
     }
 
+    @GetMapping("/description/{description}")
+    public List<Gadget> getGadgetByDescription(@PathVariable String description) {
+        return gadgetServices.findAllByDescritpion(description);
+    } 
+    @GetMapping("/price/{price}")
+    public List<Gadget> getGadgetByPrice(@PathVariable Integer price) {
+        return gadgetServices.findAllByPrice(price);
+    }
+
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public Gadget save(@RequestBody Gadget gadget) {

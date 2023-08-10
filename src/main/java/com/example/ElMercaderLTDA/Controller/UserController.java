@@ -40,6 +40,11 @@ public class UserController {
     public User getUser(@PathVariable int id) {
         return userServices.getUser(id);
     }
+    
+    @GetMapping("/birthday/{month}")
+    public List<User> getAllByBirthDay(@PathVariable String month) {
+        return userServices.getAllByBirthtDay(month);
+    }
 
     @GetMapping("coord/{zone}")
     public User getZoneCoordinator(@PathVariable String zone) {

@@ -5,6 +5,8 @@ import com.example.ElMercaderLTDA.Model.User;
 import java.util.Optional;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
+
 import java.util.List;
 
 
@@ -26,5 +28,8 @@ public interface UserRepository extends MongoRepository<User, Integer>{
     // Encontrar por zona y tipo. COORD pueden acceder a este método
     // @Query("{ 'zone' : ?0, 'type' : ?1}")
     Optional<User> getUserByZoneAndType(String zone, String type);
+
+    @Query("{ 'monthBirthtDay' : ?0}")
+    public List<User> findAllByMonthBirthtDay(String month);
 
 }
